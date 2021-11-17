@@ -88,8 +88,6 @@ for i in tablet_details:
     
     Specification = [", ".join(list_specification)]
     
-    print(ModelName,Price,Ratings,Stars,RAM,ROM,Screen,Battery)
-    
     TabletDetails = pd.DataFrame({
         "Tablet Name": pd.Series(ModelName),
         "RAM GB": pd.Series(RAM),
