@@ -80,5 +80,7 @@ def Main(Data):
     
     print("Total sales were done for {} and the average sales made are {}".format(DeviceSold,Cost))
     
-Data = pd.read_excel("../Testing_And_CICD_Demonstration/static/Tablet.xlsx")
-Main(Data)
+# =============================================================================
+# Data = pd.read_excel("static/Tablet.xlsx")
+# Main(Data)
+# =============================================================================
