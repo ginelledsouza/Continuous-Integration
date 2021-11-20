@@ -1,6 +1,4 @@
-import pymongo
 import unittest
-import psycopg2
 import pandas as pd
 import TestingScript as test
 from pandas.testing import assert_frame_equal
