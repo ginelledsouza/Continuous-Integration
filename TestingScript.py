@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+    
 def DataCleaning(Data):
     
     Tablet = Data.copy()
@@ -38,6 +38,15 @@ def DataCleaning(Data):
     
 def DeviceType(Data):
     
+    """
+    >>> DeviceType(Dummy_test_one)
+                         Name  RAM    ROM Screen  Battery  Price   Brand       OS        Device Type
+    0            Lenovo Tab 7  2GB   16GB   6.98     3500   8299  Lenovo  Android  Medium Ended User
+    1  Apple iPad Pro 11 2020  6GB  128GB     11     7538  66045   Apple      iOS    High Ended User
+    2    Apple iPad Mini 2019  3GB   64GB    7.9     5124  34900   Apple      iOS  Medium Ended User
+
+    """
+    
     Tablet = Data.copy()
     
     RAMDatabase  = ['8GB','6GB', '4GB']
@@ -71,16 +80,32 @@ def InventorySummary(Data):
     return MaxDeviceSold,AvgCost
     
 def Main(Data):
-    
+
+    """ 
+    >>> Main(Dummy_final_test)
+    'Total sales were done for Medium Ended User and the average sales made are 21599'
+    """
     Data = DataCleaning(Data)
     Data = DeviceType(Data)
-    print("Tablet Inventory Data Processed")
     
     DeviceSold,Cost = InventorySummary(Data)
     
-    print("Total sales were done for {} and the average sales made are {}".format(DeviceSold,Cost))
+    Text = "Total sales were done for {} and the average sales made are {}".format(DeviceSold,Cost)
     
-# =============================================================================
-# Data = pd.read_excel("static/Tablet.xlsx")
-# Main(Data)
-# =============================================================================
+    return Text
+    
+Dummy = {'Name': ['Lenovo Tab 7', 'Apple iPad Pro 11 2020', 'Apple iPad Mini 2019'],
+             'RAM': ['2GB RAM','6GB RAM','3GB RAM'],
+             'ROM': ['16GB Storage', '128GB Storage', '64GB Storage'],
+             'Screen': ['6.98 inch Screen', '11 inch Screen', '7.9 inch Screen'],
+             'Battery': ['3500mAh', '7538mAh', '5124mAh'],
+             'Price': ['Rs. 8,299', 'Rs. 66,045', 'Rs. 34,900']}
+             
+Dummy_final_test = pd.DataFrame(Dummy)
+Dummy_test_one = DataCleaning(Dummy_final_test)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+
