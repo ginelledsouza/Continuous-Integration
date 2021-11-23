@@ -44,7 +44,6 @@ def DeviceType(Data):
     0            Lenovo Tab 7  2GB   16GB   6.98     3500   8299  Lenovo  Android  Medium Ended User
     1  Apple iPad Pro 11 2020  6GB  128GB     11     7538  66045   Apple      iOS    High Ended User
     2    Apple iPad Mini 2019  3GB   64GB    7.9     5124  34900   Apple      iOS  Medium Ended User
-
     """
     
     Tablet = Data.copy()
@@ -107,5 +106,3 @@ Dummy_test_one = DataCleaning(Dummy_final_test)
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
-
