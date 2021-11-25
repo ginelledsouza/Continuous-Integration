@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Continuous Integration
 
 # Controls when the workflow will run
@@ -28,5 +26,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
-      - name: Run Test Cases
+      - name: Run Unit Testing Cases
         run: python TestCases.py -v
+          
+      - name: Run Document Testing Cases
+        run: python TestingScript.py -v
